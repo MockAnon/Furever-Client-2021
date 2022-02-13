@@ -6,6 +6,9 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// import 'dotenv/config';
+// require('dotenv').config()
+
 ReactDOM.render(
   // <React.StrictMode>
   //   <App />

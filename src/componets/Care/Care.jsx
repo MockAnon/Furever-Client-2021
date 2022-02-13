@@ -32,7 +32,7 @@ class Care extends Component {
       const adopted = sessionStorage.getItem('adopted');
       // sends API request to get the pet care of the user if they have pets
       if (adopted === 'true') {
-        fetch(`http://localhost:8080/extras/care/${userId}`)
+        fetch(`${process.env.REACT_APP_SERVER_URL}/extras/care/${userId}`)
           .then(res => res.json())
           .then(res => {
             this.setState({ breedInfo: res.data.attributes, isLoaded: true });

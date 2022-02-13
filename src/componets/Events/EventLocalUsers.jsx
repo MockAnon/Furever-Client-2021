@@ -18,7 +18,7 @@ class EventLocalUsers extends Component {
   componentDidMount() {
     // this.props.setEventName('Cats');
     //code I added in will link to server
-    fetch('http://localhost:8080/user/withpets')
+    fetch(`${process.env.REACT_APP_SERVER_URL}/user/withpets`)
       .then(res => res.json())
       .then(
         result => {

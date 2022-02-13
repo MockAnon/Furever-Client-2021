@@ -74,7 +74,7 @@ class Adopt extends Component {
   };
 
   getPets = () => {
-    fetch('http://localhost:8080/pets')
+    fetch(`${process.env.REACT_APP_SERVER_URL}/pets`)
       .then(res => res.json())
       .then(result => {
         this.setState({
@@ -111,7 +111,7 @@ class Adopt extends Component {
     filters.lastPet = id;
 
     axios
-      .put(`http://localhost:8080/pets/filter`, filters)
+      .put(`${process.env.REACT_APP_SERVER_URL}/pets/filter`, filters)
       .then(response => {
         // if there are no results, it is not an array
         if (response.data.data instanceof Array) {

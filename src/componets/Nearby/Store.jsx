@@ -34,7 +34,7 @@ class Store extends Component {
 
     const component = this;
     axios
-      .get(`http://localhost:8080/extras/places`, { params: outputObj })
+      .get(`${process.env.REACT_APP_SERVER_URL}/extras/places`, { params: outputObj })
       .then(function(response) {
         const results = response.data.data.attributes.results;
         console.log("results OUT", results);

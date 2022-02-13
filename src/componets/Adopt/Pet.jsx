@@ -69,7 +69,7 @@ class Pet extends Component {
       return;
     }
     axios
-      .post(`http://localhost:8080/pet/${this.props.pet.id}/adopt`, {
+      .post(`${process.env.REACT_APP_SERVER_URL}/pet/${this.props.pet.id}/adopt`, {
         userId: `${sessionStorage.getItem('userId')}`,
         petId: `${this.props.pet.id}`
       })

@@ -62,8 +62,10 @@ class Login extends Component {
       password: this.state.password
     };
 
+    console.log("SERVER", `${process.env.REACT_APP_SERVER_URL}`);
+
     axios
-      .post('http://localhost:8080/user/login', reqObj)
+      .post(`${process.env.REACT_APP_SERVER_URL}/user/login`, reqObj)
       .then(res => {
         //grabs the userId from the successful login response
         sessionStorage.setItem('userId', res.data.data.attributes.id);

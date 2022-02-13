@@ -119,7 +119,7 @@ class AdoptFilter extends Component {
     }
 
     axios
-      .put(`http://localhost:8080/pets/filter`, outputObj)
+      .put(`${process.env.REACT_APP_SERVER_URL}/pets/filter`, outputObj)
       .then(function(response) {
         rerenderPets(JSON.stringify(response), outputObj);
       })

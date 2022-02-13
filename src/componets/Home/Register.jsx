@@ -85,7 +85,7 @@ class Register extends Component {
     };
 
     axios
-      .post('http://localhost:8080/user/register', reqObj)
+      .post(`${process.env.REACT_APP_SERVER_URL}/user/register`, reqObj)
       .then(res => {
         //grabs the userId from the successful login response
         sessionStorage.setItem('userId', res.data.data.attributes.id);

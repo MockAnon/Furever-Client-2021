@@ -33,7 +33,7 @@ class EventComposeFeed extends Component {
     // console.log('AFTER', this.state.clicked);
 
     axios
-      .post('http://localhost:8080/events/going', goingObj)
+      .post(`${process.env.REACT_APP_SERVER_URL}/events/going`, goingObj)
       .then(function(response) {
         // console.log('response', response);
         window.location.reload();

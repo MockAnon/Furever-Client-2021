@@ -21,7 +21,7 @@ class EventCompose extends Component {
   componentDidMount() {
     this.setState({ title: this.props.eventName });
     //code I added in will link to server
-    fetch('http://localhost:8080/events')
+    fetch(`${process.env.REACT_APP_SERVER_URL}/events`)
       .then(res => res.json())
       .then(result => {
         this.setState({
@@ -87,7 +87,7 @@ class EventCompose extends Component {
       date: this.state.date
     };
     axios
-      .post('http://localhost:8080/events/create', reqObj)
+      .post(`${process.env.REACT_APP_SERVER_URL}/events/create`, reqObj)
       .then(function(response) {
         window.location.reload();
       })
