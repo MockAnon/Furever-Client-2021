@@ -58,10 +58,14 @@ class Login extends Component {
     }
 
     const reqObj = {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },  
       username: this.state.username,
       password: this.state.password
     };
 
+  
     console.log("SERVER", `${process.env.REACT_APP_SERVER_URL}`);
 
     axios
