@@ -2,7 +2,7 @@ import React, { Fragment, Component } from 'react';
 import ReactLoading from 'react-loading';
 import axios from 'axios';
 
-
+ 
 class Login extends Component {
   constructor(props) {
     super(props);
