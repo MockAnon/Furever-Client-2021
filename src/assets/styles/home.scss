@@ -1,11 +1,17 @@
+#home-page {
+//@debug   background: url('../../assets/bg.mp4');
+  position: relative;
+}
+
 #home-video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  min-width: 100vw;
+  min-height: 100%;
+  min-width: 100%;
   opacity: 0.9;
   z-index: -1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .home-title {
@@ -24,8 +30,7 @@
   position: relative;
   margin: 25vh auto;
   width: 45em;
-  background-color: #fcfeff;
-  opacity: 0.95;
+  background-color: var(--background);
 }
 
 a.disable {
@@ -94,3 +99,10 @@ a.disable {
 #register-form-link {
   cursor: pointer;
 }
+
+.landing-logo {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem 4rem;
+}
+

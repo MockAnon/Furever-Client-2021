@@ -13,21 +13,33 @@
 }
 #adopttitle h1 {
   color: #fcfeff;
-  // margin-top: 5em;
   font-size: 4em;
-  margin-top: 3.75em;
+  margin-top: 2.75em;
   opacity: 0.8;
 }
 
 #adoptContentPanel {
-  background-color: white;
+  background-color: var(--background);
 }
+
 .adoptitem {
-  background: #eff0f7;
+  box-shadow: var(--shadowA);
+  background: var(--white);
+  border: 2px solid var(--white);
   margin: 1em;
   margin-left: 0.5em;
   margin-right: 0.5em;
+  transform: scale(1);
+  transition: linear .1s all;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.025);
+    box-shadow: var(--shadowB);
+    border: 2px solid var(--primary);
+  }
 }
+
+
 
 .adopt-page {
   height: 100%;
@@ -45,9 +57,14 @@
 }
 
 #adoptfilter {
-  background: #e1ecef;
+  background: var(--background);
 }
 
 #adoptfilterbgcolor {
-  background: #e1e6f6d1;
+  background: var(--background);
+}
+
+.adopt-row {
+  display: flex;
+  flex-wrap: wrap;
 }

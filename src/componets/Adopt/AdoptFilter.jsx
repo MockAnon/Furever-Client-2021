@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { DropdownButton, Dropdown, ButtonToolbar, Button } from 'react-bootstrap';
+import { Dropdown, ButtonToolbar, Button, Form } from 'react-bootstrap';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+
+//import { Value } from 'sass';
 
 //import assets
 const axios = require('axios');
@@ -42,55 +45,59 @@ class AdoptFilter extends Component {
 
     return (
       <div className="filter-buttons panel-body" id="adoptfilterbgcolor">
-        <p>
+        <p class="">
           <strong>Filter</strong>
         </p>
-        <ButtonToolbar className="btn-group">
-          <DropdownButton title={animalTitle} key="Animal" id="dropdown-animal" onSelect={this.changeAnimal}>
-            <Dropdown.Item eventKey="Cat">Cat</Dropdown.Item>
-            <Dropdown.Item eventKey="Dog">Dog</Dropdown.Item>
-          </DropdownButton>
-          <DropdownButton title={sexMapper[sexTitle]} key="Sex" id="dropdown-sex" onSelect={this.changeSex}>
-            <Dropdown.Item eventKey="M">Male</Dropdown.Item>
-            <Dropdown.Item eventKey="F">Female</Dropdown.Item>
-          </DropdownButton>
-          <DropdownButton title={ageTitle} key="Age" id="dropdown-age" onSelect={this.changeAge}>
-            <Dropdown.Item eventKey="Baby">Baby</Dropdown.Item>
-            <Dropdown.Item eventKey="Young">Young</Dropdown.Item>
-            <Dropdown.Item eventKey="Adult">Adult</Dropdown.Item>
-            <Dropdown.Item eventKey="Senior">Senior</Dropdown.Item>
-          </DropdownButton>
-          <DropdownButton title={sizeMapper[sizeTitle]} key="Size" id="dropdown-size" onSelect={this.changeSize}>
-            <Dropdown.Item eventKey="Small">Small</Dropdown.Item>
-            <Dropdown.Item eventKey="Medium">Medium</Dropdown.Item>
-            <Dropdown.Item eventKey="Large">Large</Dropdown.Item>
-            <Dropdown.Item eventKey="XLarge">XLarge</Dropdown.Item>
-          </DropdownButton>
-        </ButtonToolbar>
-        <br />
-        <ButtonToolbar className="btn-group">
-          <Button onClick={this.filterSubmit}>Submit</Button>
-          <Button onClick={this.resetFilter}>Reset Filter</Button>
-        </ButtonToolbar>
+
+        <div class="search-input standard-width">
+          <select id="dropdown-animal" value={this.state.animal} onChange={this.changeAnimal}>
+              <option value="">Please Select Animal</option>
+              <option value="Cat">Cat</option>
+              <option value="Dog">Dog</option>
+          </select>
+          <select key="Sex" id="dropdown-sex" value={this.state.sex} onChange={this.changeSex}>
+            <option value="">Please Select Sex</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+            <select key="Age" id="dropdown-age" value={this.state.age} onChange={this.changeAge}>
+              <option value="">Please Select Age</option>
+              <option value="Baby">Baby</option>
+              <option value="Young">Young</option>
+              <option value="Adult">Adult</option>
+              <option value="Senior">Senior</option>
+            </select>
+            <select key="Size" id="dropdown-size" value={this.state.size} onChange={this.changeSize}>
+              <option value="">Please Select Size</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Large">Large</option>
+              <option value="XLarge">XLarge</option>
+            </select>
+            <div>
+              <Button onClick={this.filterSubmit}>Submit</Button>
+              <Button onClick={this.resetFilter}>Reset Filter</Button>
+            </div>
+        </div>
       </div>
     );
   };
 
-  // controlled inputs for button selection
-  changeAnimal = (key, event) => {
-    this.setState({ animal: key });
+  changeAnimal = e => {
+     this.setState({ animal: e.target.value });
+     console.log(this.state);
   };
 
-  changeSize = (key, event) => {
-    this.setState({ size: key });
+  changeSize = e => {
+    this.setState({ size: e.target.value });
   };
 
-  changeSex = (key, event) => {
-    this.setState({ sex: key });
+  changeSex = e => {
+    this.setState({ sex: e.target.value });
   };
 
-  changeAge = (key, event) => {
-    this.setState({ age: key });
+  changeAge = e => {
+    this.setState({ age: e.target.value });
   };
 
   // submits selected filters to adopt

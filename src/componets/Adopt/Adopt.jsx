@@ -40,8 +40,8 @@ class Adopt extends Component {
         <div id="adoptContentPanel">
           <AdoptFilter rerenderPets={this.rerenderPets} resetFilter={this.resetFilter} />
 
-          <div className="container-fluid">
-            <div className="row">{this._renderAdoptItems()}</div>
+          <div className="container-fluid standard-width">
+            <div className="row adopt-row">{this._renderAdoptItems()}</div>
           </div>
           <div className="col-lg-12">{this._renderWaypoint()}</div>
         </div>

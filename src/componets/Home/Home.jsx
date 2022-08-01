@@ -17,17 +17,20 @@ function Home( props ) {
 
   return (     
     <Fragment>
-      <video id="home-video-background" loop autoPlay>
-        <source src={require('../../assets/bg.mp4')} type="video/mp4" />
-      </video>
+      <div id="home-page">
+        <video id="home-video-background" loop autoPlay>
+          <source src={require('../../assets/bg.mp4')} type="video/mp4" />
+        </video> 
 
-      <section id="home-panel" className="panel panel-default">
-        <h1 className="home-title">
-          Fur <i className="fas fa-paw home-title-icon" /> Ever
-        </h1>
+        <section id="home-panel" className="panel panel-default">
+          {/* <h1 className="home-title">
+            Fur <i className="fas fa-paw home-title-icon" /> Ever
+          </h1> */}
+          <img className="landing-logo" src={require('../../assets/logos/FurEver-logo.png')} alt="furever logo"/>
 
-        <Greetings />
-      </section>
+          <Greetings />
+        </section>
+      </div>
     </Fragment>
   )
 };

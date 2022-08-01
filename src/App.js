@@ -2,7 +2,7 @@ import React, { Component, withRouter, useHistory } from 'react';
 
 import logo from './logo.svg';
 // import './App.css';
-import Navbar from './componets/Navbar/Navbar';
+import NavbarMain from './componets/Navbar/Navbar';
 import Footer from './componets/Footer/Footer';
 import Main from './componets/Main';
 import './assets/styles/App.scss';
@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        <NavbarMain />
         <div className="App">
           <Main showClippy={this.showClippy} />
         </div>
